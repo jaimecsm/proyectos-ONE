@@ -1,0 +1,103 @@
+.principal{
+    background: #e5e5e5;
+}
+
+header {
+    background-color: #71781f;
+    padding: 20px 0;
+}
+
+.titulo-header{
+    text-align: center;
+}
+.titulo-header  img{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+
+div{
+
+    display: inline;
+
+}
+
+main{
+    padding: 10px 0px 0px 10px;
+}
+
+.encdes{
+    margin: 0px 0px 0px 30px;
+    display: inline-block;
+}
+
+.enc{
+    margin: 0px 0px 0px 380px;
+    display: inline-block;
+}
+
+#texto{
+    margin: 10px 0px 0px 30px;
+    display: inline-block;
+}
+
+#resultado{
+    margin: 0px 0px 0px 70px;
+    display: inline-block;
+}
+
+.encriptar{
+    background-color: aqua; 
+    margin-left: 190px;
+}
+
+.encriptar:hover{
+    transform: scale(1.2);
+}
+
+.desencriptar{
+    background: chocolate;
+}
+
+.desencriptar:hover{
+    transform: scale(1.2);
+}
+
+.limpiar{
+    background: rgb(249, 188, 188);
+}
+
+.limpiar:hover{
+    transform: scale(1.2);
+}
+
+.copiar{
+    background: cornflowerblue;
+    margin: 10px 10px 75px 400px;
+    display: none;
+}
+
+.copiar:hover{
+    transform: scale(1.2);
+}
+
+footer{
+    text-align: center;
+    background: rgb(211, 196, 196); 
+    padding: 40px 0px 0px 0px;
+}
+
+footer img{
+    width: 70px;
+    height: 70px;   
+    margin: 0px 0px 0px 0px;
+}
+
+.derecho-autor{
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 0px;
+}
+
