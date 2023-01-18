@@ -15,7 +15,7 @@
         <div>
             <h2 class="encdes">Encriptar/Desencriptar</h2>
             <h2 class="enc">Resultado</h2>
-            <textarea cols="70" rows="10" id="texto" placeholder="Ingrese el texto aquí" autofocus></textarea>
+            <textarea cols="70" rows="10" class="texto" id="texto" placeholder="Ingrese el texto aquí" autofocus></textarea>
             <textarea cols="70" rows="10" id="resultado" readonly></textarea>
         </div>
 
@@ -26,7 +26,6 @@
 
     </main>
     <footer>
-        <img src="imagenes/jaime.png" alt="Jaime Contreras San Martín">
         <p class="derecho-autor">&copy Copyright Jaime Contreras San Martín</p>
     </footer>
 </body>
@@ -34,75 +33,42 @@
 <script>    
 
     function encriptar(){
+       var txtEncriptar,txtCifrado;
+       txtEncriptar = document.getElementById("texto").value;
+       if(txtEncriptar != ""){
+        txtCifrado = txtEncriptar.replace(/e/img,"enter");
+        txtCifrado = txtCifrado.replace(/o/img,"ober");
+        txtCifrado = txtCifrado.replace(/i/img,"imes");
+        txtCifrado = txtCifrado.replace(/a/img,"ai");
+        txtCifrado = txtCifrado.replace(/u/img,"ufat");
 
-        var narrativa = document.getElementById("texto").value;
-        var encriptado = "";
-        var llaves = ["enter","imes","ai","ober","ufat"];
-
-        if (narrativa == "") {
-            alert("Debe ingresar un texto");
-        }else if(document.getElementById("texto").value == document.getElementById("resultado").value){
-            alert("Ingrese un texto distinto al del resultado")
-        }else{
-                for(var i=0; i < narrativa.length; i++){
-                switch (narrativa[i]){
-                    case "e":
-                        encriptado = encriptado + "enter";
-                        break;
-                    case "i": 
-                        encriptado = encriptado + "imes";
-                        break;
-                    case "a":
-                        encriptado = encriptado + "ai";
-                        break;
-                    case "o": 
-                        encriptado = encriptado + "ober";
-                        break;
-                    case "u": 
-                        encriptado = encriptado + "ufat";
-                        break;
-                    default:
-                        encriptado = encriptado + narrativa[i];
-                        break;
-                        }
-                }
-         }
-        document.getElementById("resultado").value = encriptado;
+        document.getElementById("resultado").value = txtCifrado;
         mostrar();
-        }
+       }else{
+        alert("Debe ingresar un texto a encriptar");
+       }
+       document.getElementById("texto").focus();
+    }
 
     function desencriptar(){
+       var txtDesencriptar,txtDecifrado;       
+       txtDesencriptar = document.getElementById("texto").value;
 
-        var narrativa2 = document.getElementById("resultado").value;
-        var narrativa1 = document.getElementById("texto").value;
-        var llave1 = ["enter","imes","ai","ober","ufat"];
-        var llave2 = ["e","i","a","o","u"];
-      
-        if (narrativa2 == "") {
-            alert("Debe haber un texto encriptado para esta acción");
-        }else if(narrativa1.length != narrativa2.length){
-            alert("debe copiar el texto encriptado del cuadro que esta a su derecha");
+        if((txtDesencriptar != "") && (document.getElementById("resultado").value != "")){
+            txtDecifrado = txtDesencriptar.replace(/enter/img,"e");
+            txtDecifrado = txtDecifrado.replace(/ober/img,"o");
+            txtDecifrado = txtDecifrado.replace(/imes/img,"i");
+            txtDecifrado = txtDecifrado.replace(/ai/img,"a");
+            txtDecifrado = txtDecifrado.replace(/ufat/img,"u"); 
+            console.log("entro");
+            document.getElementById("resultado").value = txtDecifrado;
         }else{
-            for(var i = 0; i < 5; i++){
-                //encuentra la primera posición de la llave
-                var posicion = narrativa2.indexOf(llave1[i]);
-                //console.log(posicion);
-                var text = llave1[i];
-                //y mientras tenga una posición mayor o igual a 0
-                //-1 significa que no lo encontro
-                while(posicion >= 0){
-                    //reemplaza "enter" por "e"
-                    narrativa2 = narrativa2.slice(0,posicion) + llave2[i] + narrativa2.slice(posicion + text.length);
-                    console.log(narrativa2);
-                    //busca la siguiente ocurrencia de la palabra
-                    posicion = narrativa2.indexOf(llave1[i]);
-                }
-            }           
-        }
-        document.getElementById("resultado").value = narrativa2;
-      }  
-    
-
+            alert("Debe ingresar un texto a desencriptar");
+        }  
+        ocultar();
+        document.getElementById("texto").focus();
+    }
+ 
     function mostrar(){
         document.getElementById("Copiar").style.display = "inline";
     }
@@ -128,7 +94,6 @@
         document.body.removeChild(aux);
     }
 
-   
 
     var botonEnc = document.getElementById("Encriptar");
     botonEnc.onclick = encriptar;

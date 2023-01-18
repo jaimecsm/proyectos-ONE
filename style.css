@@ -38,6 +38,10 @@ main{
     display: inline-block;
 }
 
+.texto{
+    text-transform: lowercase;
+}
+
 #texto{
     margin: 10px 0px 0px 30px;
     display: inline-block;
