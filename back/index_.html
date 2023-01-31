@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> /*para defirnir el diccionario*/
     <title>Encriptador</title>
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="body">
-    <header>
-        <div class="img-titulo">
-            <h1><img src="imagenes/encriptador.jfif" alt="imagene de un candado" class="candado"></h1>
-            <h1 class="titulo_header">Encriptador de Texto</h1>
-        </div>
+
+<body class="principal">
+    <header class="titulo-header">
+        <img src="imagenes/encriptador.jfif" alt="logo referencia a encriptacion">
+        <h1>Encriptador de Texto</h1>
     </header>
     <main>
-            <ul class="ultextarea">
-                <li>
-                    <h2>Encriptar / Desencriptar</h2>
-                    <textarea class="ingreso-texto" id="texto" autofocus></textarea><br>
-                    <input type="submit" value="Encriptar" class="encriptar" id="Encriptar">
-                    <input type="submit" value="Desencriptar" class="desencriptar" id="Desencriptar">
-                    <input type="submit" value="limpiar" class="limpiar" id="Limpiar">
-                </li>
-                <li>
-                    <h2>Resultado</h2>
-                    <textarea class="resultado" id="resultado"></textarea><br>
-                    <input type="submit" value="copiar" class="copiar" id="Copiar">
-                </li>
-            </ul> 
+        <div>
+            <h2 class="encdes">Encriptar/Desencriptar</h2>
+            <h2 class="enc">Resultado</h2>
+            <textarea cols="70" rows="10" class="texto" id="texto" placeholder="Ingrese el texto aquí" autofocus></textarea>
+            <textarea cols="70" rows="10" id="resultado" readonly></textarea>
+        </div>
+
+        <input type="submit" value="Encriptar" class="encriptar" id="Encriptar">
+        <input type="submit" value="Desencriptar" class="desencriptar" id="Desencriptar">
+        <input type="submit" value="limpiar" class="limpiar" id="Limpiar">
+        <input type="submit" value="copiar" class="copiar" id="Copiar">
+
     </main>
     <footer>
         <p class="derecho-autor">&copy Copyright Jaime Contreras San Martín</p>
     </footer>
 </body>
+
 <script>    
 
     function encriptar(){
@@ -63,6 +60,7 @@
             txtDecifrado = txtDecifrado.replace(/imes/img,"i");
             txtDecifrado = txtDecifrado.replace(/ai/img,"a");
             txtDecifrado = txtDecifrado.replace(/ufat/img,"u"); 
+            console.log("entro");
             document.getElementById("resultado").value = txtDecifrado;
         }else{
             alert("Debe ingresar un texto a desencriptar");
@@ -108,6 +106,6 @@
 
     var botonCopiar = document.getElementById("Copiar");
     botonCopiar.onclick = copiar;
-
+    
 </script>
 </html>

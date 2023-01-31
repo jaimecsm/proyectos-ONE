@@ -1,107 +1,76 @@
-.principal{
-    background: #e5e5e5;
+.body{
+    background-color: #e8e6d8;
 }
-
-header {
-    background-color: #71781f;
+header{
+    background-color: #e2d0e6;
     padding: 20px 0;
 }
 
-.titulo-header{
-    text-align: center;
+.img-titulo{
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
 }
-.titulo-header  img{
-    width: 90px;
-    height: 90px;
+
+.titulo_header{
+    /*border: 10px solid #678cd6;*/
+    font-size: 4em;
     position: absolute;
     top: 20px;
-    left: 50px;
+    right: 80px;
+    background: rgb(216, 188, 85);
+    color: blue;
 }
 
-div{
-
-    display: inline;
-
+.candado{
+    width: 20%;
+    padding: 0px 0px 0px 10px;
 }
 
-main{
-    padding: 10px 0px 0px 10px;
+.ultextarea{
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
 }
 
-.encdes{
-    margin: 0px 0px 0px 30px;
+.ultextarea li{
     display: inline-block;
+    width: 40%;
+    vertical-align: top;
 }
 
-.enc{
-    margin: 0px 0px 0px 380px;
-    display: inline-block;
+.ultextarea h2{
+    font-size: 30px;
+    font-weight: bold;
 }
 
-.texto{
-    text-transform: lowercase;
+.ultextarea textarea{
+    width: 330px;
+    height: 150px;
 }
 
-#texto{
-    margin: 10px 0px 0px 30px;
-    display: inline-block;
-}
-
-#resultado{
-    margin: 0px 0px 0px 70px;
-    display: inline-block;
-}
-
-.encriptar{
-    background-color: aqua; 
-    margin-left: 190px;
-}
-
-.encriptar:hover{
-    transform: scale(1.2);
-}
-
-.desencriptar{
-    background: chocolate;
-}
-
-.desencriptar:hover{
-    transform: scale(1.2);
-}
-
-.limpiar{
-    background: rgb(249, 188, 188);
-}
-
-.limpiar:hover{
-    transform: scale(1.2);
-}
-
-.copiar{
-    background: cornflowerblue;
-    margin: 10px 10px 75px 400px;
+#Copiar{
     display: none;
 }
+.ultextarea input{
+    background-color: aquamarine;
+}
 
-.copiar:hover{
+.ultextarea input:hover{
     transform: scale(1.2);
 }
 
 footer{
-    text-align: center;
-    background: rgb(211, 196, 196); 
-    padding: 40px 0px 0px 0px;
-}
-
-footer img{
-    width: 70px;
-    height: 70px;   
-    margin: 0px 0px 0px 0px;
+    background: #6f7550;
 }
 
 .derecho-autor{
-    color: #FFFFFF;
-    font-size: 13px;
-    margin: 0px;
+    color: #ffffff;
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
 }
+
 
